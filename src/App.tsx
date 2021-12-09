@@ -1,24 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ColorTitle from './components/ColorTitle';
+import SubTitle from './components/SubTitle';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ColorTitle color={"#454545"} title={"Movember"} />
+      <SubTitle text={"Moustache-Worthy Beer"} amount={"20 L"} isDark={false} />
     </div>
   );
 }
