@@ -75,7 +75,7 @@ export interface beerType {
 
 const RecipePage = () => {
 
-    const [activeTub, setActiveTub] = useState<string>('malt');
+    const [activeTub, setActiveTub]: [string, (activeTub: string) => void] = useState('malt');
     // to fix the type here
     const [beer, setBeer] : [ beerType[], (beer: beerType[]) => void]= useState(defaultbeer);
     const [loading, setLoading]: [boolean, (loading: boolean) => void] =  useState<boolean>(true);
@@ -98,12 +98,10 @@ const RecipePage = () => {
               });
         }, []);
 
-console.log(beer[0]);
+
     return(
-        loading ? <h1>loding</h1> :
-    <div>
-        <Recipe beer={beer[0]} />
-    </div>
+        loading ? <h1>loading</h1> : error ? <h1>{error}</h1> : <Recipe activeTub={activeTub} beer={beer[0]} />
+  
     )
 } 
 
