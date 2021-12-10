@@ -1,20 +1,24 @@
+import { BrowserRouter } from "react-router-dom";
 import { beerType } from "../../pages/RecipePage";
-import BeerNav from "../BeerNav";
+
 import BeerProrps from "../BeerProrps";
 import ColorTitle from "../ColorTitle";
 import Description from "../Description";
+import IngContainer from "../IngContainer";
 import SubTitle from "../SubTitle";
 import { Wraper } from "./styles";
 
 export type RecipeProps = {
 beer:beerType
 activeTub: string
+onActive: (tub: string) => void
   };
   
-  const Recipe = ({beer, activeTub}:RecipeProps): JSX.Element => {
+  const Recipe = ({beer, activeTub, onActive}:RecipeProps): JSX.Element => {
       console.log(beer);
       
     return (
+        <BrowserRouter>
         <div style={{display:"flex", alignItems: "flex-end"}}>
             <img style={{height:" 651px", margin: "0 40px"}} src={`${beer.image_url}`} alt="aaa"/> 
             <Wraper>
@@ -28,9 +32,9 @@ activeTub: string
             <Wraper>
                 <div style={{height:"140px"}}></div>
                 <SubTitle isDark={false} text={"ingredients for "} amount={beer.volume.value} units={beer.volume.unit === "litres" ? "L" : beer.volume.unit} />
-                <BeerNav active={activeTub}  />
+                <IngContainer activeTub={activeTub} onActive={onActive}  />
             </Wraper>
-      </div>
+      </div></BrowserRouter>
 
     );
   };

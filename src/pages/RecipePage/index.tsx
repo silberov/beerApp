@@ -100,7 +100,8 @@ const RecipePage = () => {
 
 
     return(
-        loading ? <h1>loading</h1> : error ? <h1>{error}</h1> : <Recipe activeTub={activeTub} beer={beer[0]} />
+
+        loading ? <h1>loading</h1> : error ? <h1>{error}</h1> : <Recipe activeTub={activeTub} onActive={setActiveTub} beer={beer[0]} />
   
     )
 } 
