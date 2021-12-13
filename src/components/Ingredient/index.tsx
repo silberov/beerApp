@@ -1,14 +1,22 @@
+import { unitsToLetters } from "../../functions/units";
 import { Wraper } from "./styles";
 
-export type Props = {
-
+export type PropsIngrediant = {
+  name: string;
+  amount: number;
+  units: string
   };
+
+
   
-  const Ingrediant = (): JSX.Element => {
+  const Ingrediant = ({name, amount, units}:PropsIngrediant): JSX.Element => {
     return (
+      <>      
       <Wraper>
-         Ingrediant
+      <p>{name}</p><div style={{display:"flex"}}><input value={amount} /><p>{unitsToLetters(units)}</p></div>
       </Wraper>
+      </>
+
     );
   };
   

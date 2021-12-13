@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
-export const Wraper = styled.nav`
-
-`;
-
 export const Box = styled.div`
     height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 3px solid ${colors.dark};
+    border-left: 3px solid ${colors.dark};
+    border-bottom: 3px solid ${colors.dark};
+    &:nth-child(0) {
+        border:none;
+    }
         &:hover {
         color: ${colors.white};
         background-color:${colors.dark};

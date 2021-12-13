@@ -14,9 +14,7 @@ const BeerProrps = ({ ibu, abv, og, fg }: BeerPropsProps) => {
   return (
     <Wraper>
         <Box><Lable>IBU : {ibu}</Lable></Box>
-        {/* <Box><Lable>ABV : {ibu}%</Lable></Box> */}
         <Box><Lable>ABV : <NumberFormat value={abv} displayType={'text'} suffix={'%'} /></Lable></Box>
-        {/* abv needs fixing */}
         <Box><Lable>OG : {og}</Lable></Box>
         <Box><Lable>FG : {fg}</Lable></Box>
     </Wraper>
