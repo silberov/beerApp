@@ -21,7 +21,7 @@ export const P = styled.p<prop>`
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
-    line-height: 44px;
+    line-height: 50px;
     margin: 0;
 `;
 export const Input = styled.input`
@@ -33,8 +33,6 @@ export const Input = styled.input`
     font-size: 18px;
     line-height: 25px;
     text-align: center;
-
-    /* padding: 3px; */
     width: 33%;
 `;
 
