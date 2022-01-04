@@ -8,7 +8,7 @@ type prop = {
 
 export const Wraper = styled.div<prop>`
     background-color: ${({isDark}) => (isDark ? colors.dark : colors.white)};
-    border: ${({isDark}) => (!isDark && `3px solid ${colors.dark}`)};
+    border-bottom: 3px solid ${colors.dark};
     border-left: none;
     display: flex;
     justify-content: space-between;
@@ -23,4 +23,23 @@ export const P = styled.p<prop>`
     font-size: 24px;
     line-height: 44px;
     margin: 0;
+`;
+export const Input = styled.input`
+    border: none;
+    border-bottom: 1px solid ${colors.dark};
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+
+    /* padding: 3px; */
+    width: 33%;
+`;
+
+export const AmountBox = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 `;

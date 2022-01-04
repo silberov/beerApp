@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../styles/colors";
 
 
 export const Wraper = styled.div`
@@ -8,9 +9,21 @@ export const Wraper = styled.div`
 `;
 
 export const InnerBox = styled.div`
-flex-basis: 40%;
+    flex-basis: 40%;
+    border: 3px solid ${colors.dark};
+    &:nth-child(1) {
+        border-right: none;
+    }
+
 `;
 
+export const OuterBox = styled.div`
+    display: flex;
+    align-content: stretch;
+ 
+`;
+
+
 export const BeerImg = styled.div`
-background-image: url()()
+    background-image: url()()
 `;

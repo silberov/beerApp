@@ -7,11 +7,9 @@ export const Box = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-left: 3px solid ${colors.dark};
+
     border-bottom: 3px solid ${colors.dark};
-    &:nth-child(0) {
-        border:none;
-    }
+  // to fix the borders
         &:hover {
         color: ${colors.white};
         background-color:${colors.dark};
@@ -22,6 +20,11 @@ export const Box = styled.div`
         background-color:${colors.dark};
         font-weight: bolder;
     }
+        &.middle {
+            border-right: 3px solid ${colors.dark};
+            border-left: 3px solid ${colors.dark};
+    }
+    
 `
 
  export const Ul = styled.ul`

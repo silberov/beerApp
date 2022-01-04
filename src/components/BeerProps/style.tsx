@@ -9,8 +9,8 @@ export const Box = styled.div`
     width:25%;
     border-bottom: 3px solid ${colors.dark};
     border-right: 3px solid ${colors.dark};
-    &:nth-child(1) {
-        border-left: 3px solid ${colors.dark};
+    &:nth-child(4) {
+        border-right: none;
     }
     padding: 20px 0;
     display: flex;

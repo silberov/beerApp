@@ -1,5 +1,5 @@
 import React from "react";
-import { Wraper, P } from "./styles";
+import { Wraper, P, Input, AmountBox } from "./styles";
 
 export interface SubTitleProps {
   text: string;
@@ -12,7 +12,7 @@ const SubTitle = ({ text, isDark = false, amount, units }: SubTitleProps) => {
   return (
     <Wraper isDark={isDark}>
       <P isDark={isDark}>{text}</P>
-      {amount && <div style={{display:"flex"}}><input value={amount} /><p>{units}</p></div>}
+      {amount && <AmountBox ><Input value={amount} /><p>{units}</p></AmountBox>}
     </Wraper>
   );
 };

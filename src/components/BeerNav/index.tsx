@@ -8,18 +8,16 @@ export type BeerNavProps = {
   
   const BeerNav = ({active, onChange}:BeerNavProps): JSX.Element => {
     
-    
     const heandleChange = (newTub:string) => {
-      //console.log(newTub);
       onChange(newTub)
     }
-
+    
     return (
       <>
         <nav>
           <Ul>
             <Li onClick={() => heandleChange('malt')}><Ilink to="/"><Box className={active === "malt" ? "active" : ""} >malt</Box></Ilink></Li>
-            <Li onClick={() => heandleChange('hops')}><Ilink to="/hops"><Box className={active === "hops" ? "active" : ""} >hops</Box></Ilink></Li>
+            <Li onClick={() => heandleChange('hops')}><Ilink to="/hops"><Box className={active === "hops" ? "active" : "middle"} >hops</Box></Ilink></Li>
             <Li onClick={() => heandleChange('yeast')}><Ilink to="/yeast"><Box className={active === "yeast" ? "active" : ""} >yeast</Box></Ilink></Li>
           </Ul>
         </nav>

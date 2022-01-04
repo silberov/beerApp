@@ -10,7 +10,7 @@ export interface BeerPropsProps {
   fg: number;
 }
 
-const BeerProrps = ({ ibu, abv, og, fg }: BeerPropsProps) => {
+const BeerProps = ({ ibu, abv, og, fg }: BeerPropsProps) => {
   return (
     <Wraper>
         <Box><Lable>IBU : {ibu}</Lable></Box>
@@ -21,4 +21,4 @@ const BeerProrps = ({ ibu, abv, og, fg }: BeerPropsProps) => {
   );
 };
 
-export default BeerProrps;
+export default BeerProps;
