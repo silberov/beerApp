@@ -1,3 +1,4 @@
+import { Text } from "../../styles/typograpgy";
 import { Wraper } from "./styles";
 
 export type descriptionProrps = {
@@ -7,7 +8,7 @@ export type descriptionProrps = {
 const Description = ({ text }: descriptionProrps): JSX.Element => {
   return (
     <Wraper>
-      {text}
+      <Text>{text}</Text>
     </Wraper>
   );
 };

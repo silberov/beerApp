@@ -1,5 +1,6 @@
 import { unitsToLetters } from "../../functions/units";
-import { Wraper } from "./styles";
+import { Text } from "../../styles/typograpgy";
+import { Wraper, IngInput, AmountBox } from "./styles";
 
 export type PropsIngrediant = {
   name: string;
@@ -11,12 +12,9 @@ export type PropsIngrediant = {
   
   const Ingrediant = ({name, amount, units}:PropsIngrediant): JSX.Element => {
     return (
-      <>      
       <Wraper>
-      <p>{name}</p><div style={{display:"flex"}}><input value={amount} /><p>{unitsToLetters(units)}</p></div>
+      <Text>{name}</Text><AmountBox><IngInput value={amount} /><Text>{unitsToLetters(units)}</Text></AmountBox>
       </Wraper>
-      </>
-
     );
   };
   

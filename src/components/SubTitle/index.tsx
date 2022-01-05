@@ -1,5 +1,6 @@
 import React from "react";
-import { Wraper, P, Input, AmountBox } from "./styles";
+import { SubTitleText } from "../../styles/typograpgy";
+import { Wraper, Input, AmountBox } from "./styles";
 
 export interface SubTitleProps {
   text: string;
@@ -11,8 +12,8 @@ export interface SubTitleProps {
 const SubTitle = ({ text, isDark = false, amount, units }: SubTitleProps) => {
   return (
     <Wraper isDark={isDark}>
-      <P isDark={isDark}>{text}</P>
-      {amount && <AmountBox ><Input value={amount} /><p>{units}</p></AmountBox>}
+      <SubTitleText isDark={isDark}>{text}</SubTitleText>
+      {amount && <AmountBox><Input value={amount}/><p>{units}</p></AmountBox>}
     </Wraper>
   );
 };

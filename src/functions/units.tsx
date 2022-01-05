@@ -6,6 +6,8 @@ export const unitsToLetters = (unit:string) => {
           return 'L';
       case 'grams':
         return 'G'
+        case 'celsius':
+          return '°C'
       default:
         return ''
     }

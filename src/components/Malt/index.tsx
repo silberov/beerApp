@@ -1,7 +1,16 @@
+import { unitsToLetters } from "../../functions/units";
+import { Text } from "../../styles/typograpgy";
 import Ingrediant from "../Ingredient";
 import { Wraper } from "./styles";
 
 export type PropsMalt = {
+  mashTemp: [{
+    temp: {
+        value: number;
+        unit: string;
+    };
+    duration: number;
+}];
   malt: {
     name: string;
     amount: {
@@ -11,16 +20,18 @@ export type PropsMalt = {
 }[]
   };
   
-  const Malt = ({malt}:PropsMalt): JSX.Element => {
-    console.log(malt);
-    
+  const Malt = ({malt, mashTemp}:PropsMalt): JSX.Element => {
+    const meshText = mashTemp.map((item, index) => `Mash ${index+1}: ${item.temp.value} ${unitsToLetters(item.temp.unit)} for ${item.duration} minuts`)
+  
     return (
       <Wraper>
-        <p>mash: 68 c* for 50 minuts </p>
-        <ul>
+    
+        <Text>{meshText}</Text>
+        
+        <ul style={{padding:"0"}}>
         {malt.map(item => <Ingrediant name={item.name} amount={item.amount.value} units={item.amount.unit}/>)}
         </ul>
-         MALT
+
       </Wraper>
     );
   };

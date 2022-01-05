@@ -23,7 +23,8 @@ onActive: (tub: string) => void
     return (
         <BrowserRouter>
           <Wraper>
-            <img style={{height:" 651px", margin: "0 40px"}} src={`${beer.image_url}`} alt={beer.name}/> 
+
+            <img style={{width:" 166px", margin: "0 30px 0 0"}} src={`${beer.image_url}`} alt={beer.name}/> 
             <div>
               <ColorTitle color={"#454545"} title={beer.name} />
               <OuterBox>
@@ -37,11 +38,12 @@ onActive: (tub: string) => void
 
                 <InnerBox>
                   <SubTitle isDark={false} text={"ingredients for"} amount={beer.volume.value} units={unitsToLetters(beer.volume.unit)} />
-                  <IngContainer activeTub={activeTub} onActive={onActive} ingredients={beer.ingredients}  />
+                  <IngContainer activeTub={activeTub} onActive={onActive} ingredients={beer.ingredients} method={beer.method}  />
                 </InnerBox>
                 
               </OuterBox>
             </div>
+
         </Wraper>
       </BrowserRouter>
 

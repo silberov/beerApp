@@ -71,7 +71,7 @@ export interface beerType {
         contributed_by: string,
     };
 
-    const defaultbeer: beerType[]= [];
+const defaultbeer: beerType[]= [];
 
 const RecipePage = () => {
 
@@ -83,24 +83,28 @@ const RecipePage = () => {
     useEffect(() => {
         axios
             .get<beerType[]>("https://api.punkapi.com/v2/beers/random")
-            .then(response => {
+            .then((response ) => {
                 setBeer(response.data);
                 setLoading(false);
             })
-            .catch(ex => {
+            .catch(err => {
                 const error =
-                ex.response.status === 404
+                err.response.status === 404
                   ? "Resource Not found"
                   : "An unexpected error has occurred";
                 setError(error);
                 setLoading(false);
               });
-        }, []);
 
+        }, []);
 
     return(
 
-        loading ? <h1>loading</h1> : error ? <h1>{error}</h1> : <Recipe activeTub={activeTub} onActive={setActiveTub} beer={beer[0]} />
+        loading ? 
+        <h1>loading</h1> : 
+        error ? <h1>{error}</h1> : 
+        // <h1>{beer[0].name}</h1>
+        <Recipe activeTub={activeTub} onActive={setActiveTub} beer={beer[0]} />
   
     )
 } 
