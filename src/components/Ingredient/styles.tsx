@@ -4,7 +4,7 @@ import { colors } from "../../styles/colors";
 export const Wraper = styled.li`
   display: flex;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding-bottom: 25px;
 `;
 
 export const AmountBox = styled.div`

@@ -14,6 +14,7 @@ export const Wraper = styled.div<prop>`
     border-left: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 30px; 
 `;
 
@@ -26,10 +27,9 @@ export const Input = styled.input`
     font-size: 18px;
     text-align: center;
     width: 33%;
+    display:inline;
 `;
 
 export const AmountBox = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    text-align: right;
 `;

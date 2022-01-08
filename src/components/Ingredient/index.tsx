@@ -13,7 +13,7 @@ export type PropsIngrediant = {
   const Ingrediant = ({name, amount, units}:PropsIngrediant): JSX.Element => {
     return (
       <Wraper>
-      <Text>{name}</Text><AmountBox><IngInput value={amount} /><Text>{unitsToLetters(units)}</Text></AmountBox>
+      <Text>{name}</Text><AmountBox><IngInput value={amount} /><Text modifiers={['bold']}>{unitsToLetters(units)}</Text></AmountBox>
       </Wraper>
     );
   };
