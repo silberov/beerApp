@@ -1,4 +1,4 @@
-import { Box, Ul, Li,Ilink } from "./styles";
+import { Box, Ul, Li, Ilink } from "./styles";
 import {  Outlet } from "react-router-dom";
 
 export type BeerNavProps = {
@@ -16,7 +16,7 @@ export type BeerNavProps = {
       <>
         <nav>
           <Ul>
-            <Li onClick={() => heandleChange('malt')}><Ilink to="/"><Box className={active === "malt" ? "active" : ""} >malt</Box></Ilink></Li>
+            <Li onClick={() => heandleChange('malt')}><Ilink to="/"><Box className={active === "malt" ? "active" : ""} >mash</Box></Ilink></Li>
             <Li onClick={() => heandleChange('hops')}><Ilink to="/hops"><Box className={active === "hops" ? "active" : "middle"} >hops</Box></Ilink></Li>
             <Li onClick={() => heandleChange('yeast')}><Ilink to="/yeast"><Box className={active === "yeast" ? "active" : ""} >yeast</Box></Ilink></Li>
           </Ul>

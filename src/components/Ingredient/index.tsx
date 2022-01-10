@@ -3,17 +3,20 @@ import { Text } from "../../styles/typograpgy";
 import { Wraper, IngInput, AmountBox } from "./styles";
 
 export type PropsIngrediant = {
-  name: string;
-  amount: number;
-  units: string
+    name: string;
+    amount: number;
+    units: string;
+    add?: string;
+    attribute?: string
+
   };
 
-
-  
-  const Ingrediant = ({name, amount, units}:PropsIngrediant): JSX.Element => {
+  const Ingrediant = ({name, amount, units, add, attribute}:PropsIngrediant): JSX.Element => {
     return (
       <Wraper>
-      <Text>{name}</Text><AmountBox><IngInput value={amount} /><Text modifiers={['bold']}>{unitsToLetters(units)}</Text></AmountBox>
+      <Text modifiers={["bold"]}>{name}</Text>
+      {add && <Text>{add} - {attribute}</Text>}
+      <AmountBox><IngInput value={amount} /><Text modifiers={['bold']}>{unitsToLetters(units)}</Text></AmountBox>
       </Wraper>
     );
   };

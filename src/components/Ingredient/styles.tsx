@@ -9,16 +9,16 @@ export const Wraper = styled.li`
 
 export const AmountBox = styled.div`
     text-align: right;
+    display:inline;
 `;
 
 export const IngInput = styled.input`
-    width: 30%;
+    width: 50px;
     text-align: center;
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    /* line-height: 30px; */
     border: none;
     border-bottom: 1px solid ${colors.dark};
 `;

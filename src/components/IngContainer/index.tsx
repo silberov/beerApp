@@ -50,8 +50,8 @@ export type PropsIngContainer = {
         <Routes>
         <Route path="/" element={<BeerNav active={activeTub} onChange={onActive}  />}>
           <Route index element={<Malt malt={ingredients.malt} mashTemp={method.mash_temp}/>} />
-          <Route path="/hops" element={<Hops />} />
-          <Route path="/yeast" element={<Yeast />} />
+          <Route path="/hops" element={<Hops hops={ingredients.hops}/>} />
+          <Route path="/yeast" element={<Yeast yeast={ingredients.yeast} temperature={method.fermentation.temp} />} />
           <Route path="*" element={<Malt malt={ingredients.malt} mashTemp={method.mash_temp} />} />
         </Route>
       </Routes>

@@ -1,10 +1,14 @@
 import { Wraper } from "./styles";
 
-export type Props = {
-
+export type yeastProps = {
+    yeast: string;
+    temperature: {
+      value: number;
+      unit: string;
+  }
   };
   
-  const Yeast = (): JSX.Element => {
+  const Yeast = ({yeast, temperature}:yeastProps): JSX.Element => {
     return (
       <Wraper>
          YEAST

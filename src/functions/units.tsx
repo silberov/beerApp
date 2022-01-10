@@ -9,6 +9,6 @@ export const unitsToLetters = (unit:string) => {
         case 'celsius':
           return '°C'
       default:
-        return ''
+        return 
     }
   }
