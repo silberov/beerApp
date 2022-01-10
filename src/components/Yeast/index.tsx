@@ -1,20 +1,39 @@
-import { Wraper } from "./styles";
+import { unitsToLetters } from "../../functions/units";
+import { Text } from "../../styles/typograpgy";
+import { Wraper, TextBox } from "./styles";
 
 export type yeastProps = {
-    yeast: string;
-    temperature: {
-      value: number;
-      unit: string;
-  }
+  yeast: string;
+  temperature: {
+    value: number;
+    unit: string;
   };
-  
-  const Yeast = ({yeast, temperature}:yeastProps): JSX.Element => {
-    return (
-      <Wraper>
-         YEAST
-      </Wraper>
-    );
-  };
-  
-  export default Yeast;
-  
+  tip: string | null;
+  twist: string | null;
+};
+
+const Yeast = ({ yeast, temperature, tip, twist }: yeastProps): JSX.Element => {
+  return (
+    <Wraper>
+      <TextBox>
+        <Text modifiers={["bold"]}>{yeast}</Text>
+        <Text modifiers={["bold"]}>
+          {temperature.value} {unitsToLetters(temperature.unit)}
+        </Text>
+      </TextBox>
+      {twist && (
+        <TextBox>
+          <Text>{twist}</Text>
+        </TextBox>
+      )}
+      {tip && (
+        <TextBox>
+          <Text><Text modifiers={["bold"]}>Tip: </Text>
+          {tip}</Text>
+        </TextBox>
+      )}
+    </Wraper>
+  );
+};
+
+export default Yeast;

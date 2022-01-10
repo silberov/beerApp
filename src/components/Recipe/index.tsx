@@ -38,7 +38,7 @@ onActive: (tub: string) => void
 
                 <InnerBox>
                   <SubTitle isDark={false} text={"ingredients for"} amount={beer.volume.value} units={unitsToLetters(beer.volume.unit)} />
-                  <IngContainer activeTub={activeTub} onActive={onActive} ingredients={beer.ingredients} method={beer.method}  />
+                  <IngContainer activeTub={activeTub} onActive={onActive} ingredients={beer.ingredients} method={beer.method} tip={beer.brewers_tips}  />
                 </InnerBox>
                 
               </OuterBox>

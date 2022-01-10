@@ -5,7 +5,7 @@ export const unitsToLetters = (unit:string) => {
       case 'litres':
           return 'L';
       case 'grams':
-        return 'G'
+        return 'g'
         case 'celsius':
           return '°C'
       default:

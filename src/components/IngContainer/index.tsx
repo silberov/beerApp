@@ -21,8 +21,9 @@ export type PropsIngContainer = {
               value: number;
               unit: string;
           };
-        };
       };
+      twist?: string | null;
+    }
     ingredients: {
       malt: {
           name: string;
@@ -40,18 +41,19 @@ export type PropsIngContainer = {
           add: string;
           attribute: string;
       }[];
-      yeast: string;
+      yeast: string; 
   }
+  tip: string | null;
   };
   
-  const IngContainer = ({activeTub, onActive, ingredients, method}:PropsIngContainer): JSX.Element => {
+  const IngContainer = ({activeTub, onActive, ingredients, method, tip}:PropsIngContainer): JSX.Element => {
     return (
       <Wraper>
         <Routes>
         <Route path="/" element={<BeerNav active={activeTub} onChange={onActive}  />}>
           <Route index element={<Malt malt={ingredients.malt} mashTemp={method.mash_temp}/>} />
           <Route path="/hops" element={<Hops hops={ingredients.hops}/>} />
-          <Route path="/yeast" element={<Yeast yeast={ingredients.yeast} temperature={method.fermentation.temp} />} />
+          <Route path="/yeast" element={<Yeast yeast={ingredients.yeast} temperature={method.fermentation.temp} tip={tip} twist={method?.twist || null} />} />
           <Route path="*" element={<Malt malt={ingredients.malt} mashTemp={method.mash_temp} />} />
         </Route>
       </Routes>
