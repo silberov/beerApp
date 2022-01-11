@@ -1,5 +1,5 @@
 import React from "react";
-import { SubTitleText, Text } from "../../styles/typograpgy";
+import { SubTitleText, Text } from "../../code-ui/typograpgy";
 import { Wraper, Input, AmountBox } from "./styles";
 
 export interface SubTitleProps {

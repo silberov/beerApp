@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../styles/colors";
+import { colors } from "../../Assets/colors";
 
 export const Wraper = styled.div`
     border-bottom: 3px solid ${colors.dark};

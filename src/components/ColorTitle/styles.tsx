@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { colors } from "../../styles/colors";
-import spacers from "../../styles/spacers";
+import { colors } from "../../Assets/colors";
+import spacers from "../../Assets/spacers";
 
 export const Dot = styled.div`
   background-color: ${(props) => (props.color ? props.color : colors.dark)};

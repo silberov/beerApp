@@ -1,4 +1,4 @@
-import { Text } from "../../styles/typograpgy";
+import { Text } from "../../code-ui/typograpgy";
 import { Wraper } from "./styles";
 
 export type descriptionProrps = {

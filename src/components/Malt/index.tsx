@@ -1,5 +1,5 @@
-import { unitsToLetters } from "../../functions/units";
-import { Text } from "../../styles/typograpgy";
+import { unitsToLetters } from "../../Helpers/units";
+import { Text } from "../../code-ui/typograpgy";
 import Ingrediant from "../Ingredient";
 import { Wraper } from "./styles";
 
