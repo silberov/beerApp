@@ -1,5 +1,6 @@
 import { beerType } from "../../interfaces/beer-interface";
 import Card from "../Card";
+import { Wraper } from "./styles";
 
 export type CardConatinerProps = {
 beers: beerType[]
@@ -7,9 +8,9 @@ beers: beerType[]
 
 const CardConatiner = ({beers}:CardConatinerProps): JSX.Element => {
   return (
-    <div>
+    <Wraper>
       {beers.map(beer => <Card beer={beer} />)}
-    </div>
+    </Wraper>
   );
 };
 

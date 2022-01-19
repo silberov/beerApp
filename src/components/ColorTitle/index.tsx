@@ -8,11 +8,11 @@ export type TitleProps = {
   isCard?: boolean;
 };
 
-const ColorTitle = ({ ebc, title }: TitleProps): JSX.Element => {
+const ColorTitle = ({ ebc, title, isCard }: TitleProps): JSX.Element => {
   return (
     <Wraper>
-      <Dot color={beerColorCalc(ebc)} />
-      <Title>{title}</Title>
+      <Dot isCard={isCard} color={beerColorCalc(ebc)} />
+      <Title isCard={isCard} >{title}</Title>
     </Wraper>
   );
 };

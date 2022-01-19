@@ -11,14 +11,15 @@ const TEXT_MODIFIER_CONFIG = {
       font-weight: 600;
     `,
   small: () => `
-      font-size: 14px;
+      font-size: 0.875rem;
     `,
 };
 
 const SUBTITLE_MODIFIER_CONFIG = {
 
-  small: () => `
-      font-size: 18px;
+  card: () => `
+      font-size: 1rem;
+      margin-left: 30px;
     `,
 };
 
@@ -26,7 +27,7 @@ export const Text = styled.span<textProp>`
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 25px;
   margin: 0;
   ${applyStyleModifiers(TEXT_MODIFIER_CONFIG)};
@@ -37,7 +38,7 @@ export const SubTitleText = styled.span<textProp>`
   font-family: Bree Serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 50px;
   margin: 0;
 

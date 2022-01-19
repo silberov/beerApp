@@ -1,4 +1,4 @@
-import { Lable } from "./styles";
+import { Lable, PropBox } from "./styles";
 
 export type cardBeerProps = {
   abv: number;
@@ -7,10 +7,10 @@ export type cardBeerProps = {
 
 const CardBeerProp = ({ abv, ibu }: cardBeerProps): JSX.Element => {
   return (
-    <div style={{display:"flex", width:"400px"}}>
+    <PropBox style={{display:"flex", maxWidth:"400px"}}>
       <Lable>ABV : {abv}</Lable>
       <Lable>IBU : {ibu}</Lable>
-    </div>
+    </PropBox>
   );
 };
 
