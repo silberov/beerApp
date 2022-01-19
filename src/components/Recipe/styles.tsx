@@ -24,8 +24,3 @@ export const OuterBox = styled.div`
     align-content: stretch;
  
 `;
-
-
-export const BeerImg = styled.div`
-    background-image: url()()
-`;

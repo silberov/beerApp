@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { colors } from "../../Assets/colors";
 import spacers from "../../Assets/spacers";
 
+type props = {
+  isCard?: boolean;
+};
+
 export const Dot = styled.div`
   background-color: ${(props) => (props.color ? props.color : colors.dark)};
   height: 43px;
@@ -11,11 +15,11 @@ export const Dot = styled.div`
   margin-left: ${spacers.scRight};
 `;
 
-export const Title = styled.p`
+export const Title = styled.p<props>`
 font-family: Teko;
 font-style: normal;
 font-weight: bold;
-font-size: 50px;
+font-size: ${(props) => (props.isCard ? "40px" : "50px")};
 color: ${colors.dark};
 margin: 0;
 padding: 0;

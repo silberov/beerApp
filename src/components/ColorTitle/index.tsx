@@ -1,14 +1,17 @@
+import beerColorCalc from "./beer-color";
 import { Dot, Title, Wraper } from "./styles";
 
+
 export type TitleProps = {
-  color: string;
+  ebc: number;
   title: string;
+  isCard?: boolean;
 };
 
-const ColorTitle = ({ color, title }: TitleProps): JSX.Element => {
+const ColorTitle = ({ ebc, title }: TitleProps): JSX.Element => {
   return (
     <Wraper>
-      <Dot color={color} />
+      <Dot color={beerColorCalc(ebc)} />
       <Title>{title}</Title>
     </Wraper>
   );

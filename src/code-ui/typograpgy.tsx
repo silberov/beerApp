@@ -10,6 +10,16 @@ const TEXT_MODIFIER_CONFIG = {
   bold: () => `
       font-weight: 600;
     `,
+  small: () => `
+      font-size: 14px;
+    `,
+};
+
+const SUBTITLE_MODIFIER_CONFIG = {
+
+  small: () => `
+      font-size: 18px;
+    `,
 };
 
 export const Text = styled.span<textProp>`
@@ -30,4 +40,6 @@ export const SubTitleText = styled.span<textProp>`
   font-size: 24px;
   line-height: 50px;
   margin: 0;
+
+  ${applyStyleModifiers(SUBTITLE_MODIFIER_CONFIG)};
 `;

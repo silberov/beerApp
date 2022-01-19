@@ -1,10 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
-import beerColorCalc from "../../Helpers/beer-color";
 import { unitsToLetters } from "../../Helpers/units";
 import { beerType } from "../../interfaces/beer-interface";
-
 import BeerProps from "../BeerProps";
-
 import ColorTitle from "../ColorTitle";
 import Description from "../Description";
 import Food from "../Food";
@@ -32,7 +29,7 @@ const Recipe = ({ beer, activeTub, onActive }: RecipeProps): JSX.Element => {
           alt={beer.name}
         />
         <div>
-          <ColorTitle color={beerColorCalc(beer.ebc)} title={beer.name} />
+          <ColorTitle ebc={beer.ebc} title={beer.name} />
           <OuterBox>
             <InnerBox>
               <SubTitle isDark={true} text={beer.tagline} />

@@ -1,5 +1,5 @@
-import { unitsToLetters } from "../../Helpers/units";
-import { Text } from "../../code-ui/typograpgy";
+import { unitsToLetters } from "../../../Helpers/units";
+import { Text } from "../../../code-ui/typograpgy";
 import { Wraper, TextBox } from "./styles";
 
 export type yeastProps = {

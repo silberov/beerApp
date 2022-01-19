@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+// need to use redux
+
 const useScale = () => {
     const [percent, setPercent] = useState(0);
     const calculatePercentage = (oldval: number, newVal: number) => {

@@ -1,6 +1,6 @@
-import { unitsToLetters } from "../../Helpers/units";
-import { Text } from "../../code-ui/typograpgy";
-import Ingrediant from "../Ingredient";
+import { unitsToLetters } from "../../../Helpers/units";
+import { Text } from "../../../code-ui/typograpgy";
+import Ingrediant from "../../Ingredient";
 import { Wraper } from "./styles";
 
 export type PropsMalt = {

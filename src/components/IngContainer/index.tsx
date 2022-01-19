@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router";
 import BeerNav from "../BeerNav";
-import Hops from "../Hops";
-import Malt from "../Malt";
-import Yeast from "../Yeast";
+import Hops from "./Hops";
+import Malt from "./Malt";
+import Yeast from "./Yeast";
 import { Wraper } from "./styles";
 
 export type PropsIngContainer = {
