@@ -2,6 +2,7 @@ import { useState } from "react";
 import { unitsToLetters } from "../../Helpers/units";
 import { Text } from "../../code-ui/typograpgy";
 import { Wraper, IngInput, AmountBox } from "./styles";
+import useScale from "../../hooks/scaling";
 
 export type ingrediantProps = {
   name: string;
@@ -9,11 +10,10 @@ export type ingrediantProps = {
   units: string;
   add?: string;
   attribute?: string;
+  
 };
 
-const calculatePercentage = (a: number, b: number) => {
-  return +(b / a).toFixed(2);
-};
+
 
 const Ingrediant = ({
   name,
@@ -22,14 +22,17 @@ const Ingrediant = ({
   add,
   attribute,
 }: ingrediantProps): JSX.Element => {
+  const [percent, calculatePercentage] = useScale() // need redux
   const [quantity, setQuantity]: [number, (quantity: number) => void] =
     useState(amount);
 
+   
+   
   const heandleChange = (event: any) => {
-    console.log(event.target.value);
-    const pros = calculatePercentage(amount, event.target.value);
-    console.log("pros", pros);
-
+    setTimeout(() => {
+      console.log("percent", percent);
+    }, 1500);
+    calculatePercentage(amount, event.target.value)
     setQuantity(event.target.value);
   };
 
@@ -48,6 +51,7 @@ const Ingrediant = ({
           onChange={(event) => {
             heandleChange(event);
           }}
+          onBlur={()=>console.log("blur", percent)}
           value={quantity}
         />
         <Text modifiers={["bold"]}>{unitsToLetters(units)}</Text>

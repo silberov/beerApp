@@ -37,7 +37,7 @@ export const Box = styled.div`
  `;
 
  export const Li = styled.li`
-    width: 33.333%;
+    width: 33.33333%;
     
  `;
 

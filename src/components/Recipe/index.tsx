@@ -19,8 +19,6 @@ export type RecipeProps = {
 };
 
 
-
-
 const Recipe = ({ beer, activeTub, onActive }: RecipeProps): JSX.Element => {
   console.log(beer);
 
