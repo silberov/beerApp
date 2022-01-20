@@ -1,9 +1,10 @@
-import { Route, Routes } from "react-router";
+// import { Route, Routes } from "react-router";
 import BeerNav from "../BeerNav";
 import Hops from "./Hops";
 import Malt from "./Malt";
 import Yeast from "./Yeast";
 import { Wraper } from "./styles";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 export type PropsIngContainer = {
   activeTub: string;
@@ -55,19 +56,15 @@ const IngContainer = ({
   method,
   tip,
 }: PropsIngContainer): JSX.Element => {
-
   // const [percent, calculatePercentage] = useScale()
 
   // console.log("cont", percent);
-  
 
   return (
     <Wraper>
-      <Routes>
-        <Route
-          path="/"
-          element={<BeerNav active={activeTub} onChange={onActive} />}
-        >
+      <Router>
+        <BeerNav active={activeTub} onChange={onActive} />
+        <Routes>
           <Route
             index
             element={
@@ -92,8 +89,8 @@ const IngContainer = ({
               <Malt malt={ingredients.malt} mashTemp={method.mash_temp} />
             }
           />
-        </Route>
-      </Routes>
+        </Routes>
+      </Router>
     </Wraper>
   );
 };

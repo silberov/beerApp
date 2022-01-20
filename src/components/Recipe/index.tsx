@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+
 import { unitsToLetters } from "../../Helpers/units";
 import { beerType } from "../../interfaces/beer-interface";
 import BeerProps from "../BeerProps";
@@ -20,7 +20,6 @@ const Recipe = ({ beer, activeTub, onActive }: RecipeProps): JSX.Element => {
   console.log(beer);
 
   return (
-    <BrowserRouter>
       <Wraper>
         {/* fix the beer img */}
         <img
@@ -61,7 +60,6 @@ const Recipe = ({ beer, activeTub, onActive }: RecipeProps): JSX.Element => {
           </OuterBox>
         </div>
       </Wraper>
-    </BrowserRouter>
   );
 };
 

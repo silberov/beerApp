@@ -7,7 +7,7 @@ export type cardBeerProps = {
 
 const CardBeerProp = ({ abv, ibu }: cardBeerProps): JSX.Element => {
   return (
-    <PropBox style={{display:"flex", maxWidth:"400px"}}>
+    <PropBox>
       <Lable>ABV : {abv}</Lable>
       <Lable>IBU : {ibu}</Lable>
     </PropBox>

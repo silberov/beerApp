@@ -17,11 +17,11 @@ const Card = ({ beer }: cardProps): JSX.Element => {
         alt={beer.name}
       />
       <InfoBox>
-        {" "}
-        <ColorTitle ebc={beer.ebc} title={beer.name} isCard={true} />
+
+        <ColorTitle ebc={beer.ebc} title={beer.name} card={true} />
         <CardBeerProp abv={beer.abv} ibu={beer.ibu} />
-        <SubTitleText modifiers={["card"]}>{beer.tagline}</SubTitleText>
-        {/* <Text>{beer.description}</Text> */}
+        <SubTitleText modifiers={["card"]}>{beer.tagline}</SubTitleText><br/>
+        <Text>{beer.description.length > 150 ? (beer.description.substring(0, 150) + "...") : beer.description}</Text>
       </InfoBox>
     </Wraper>
   );

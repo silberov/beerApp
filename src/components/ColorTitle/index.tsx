@@ -5,14 +5,15 @@ import { Dot, Title, Wraper } from "./styles";
 export type TitleProps = {
   ebc: number;
   title: string;
-  isCard?: boolean;
+  card?: boolean;
 };
 
-const ColorTitle = ({ ebc, title, isCard }: TitleProps): JSX.Element => {
+const ColorTitle = ({ ebc, title, card}: TitleProps): JSX.Element => {
   return (
     <Wraper>
-      <Dot isCard={isCard} color={beerColorCalc(ebc)} />
-      <Title isCard={isCard} >{title}</Title>
+
+      <Dot modifiers={card ? ["card"] : [""]} color={beerColorCalc(ebc)} />
+      <Title modifiers={card ? ["card"] : [""]}>{title}</Title>
     </Wraper>
   );
 };
