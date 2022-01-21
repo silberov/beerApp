@@ -6,6 +6,7 @@ export const Wraper = styled.div`
   align-items: flex-end;
   background-color: #a5a5a5;
   width: 450px;
+  cursor: pointer;
   @media (max-width: 700px) {
     position: relative;
     overflow: hidden;

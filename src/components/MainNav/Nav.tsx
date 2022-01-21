@@ -9,8 +9,8 @@ export function Nav(props: Props) {
   return (
     <Wraper>
         <ul>
-            <li><Link to="/" /></li>
-            <li><Link to="/recipe/:id" /></li>
+            <li><Link to="/">home</Link></li>
+
         </ul>
       
     </Wraper>

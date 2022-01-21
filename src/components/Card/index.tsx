@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { SubTitleText, Text } from "../../code-ui/typograpgy";
 import { beerType } from "../../interfaces/beer-interface";
 import ColorTitle from "../ColorTitle";
@@ -11,7 +12,8 @@ export type cardProps = {
 
 const Card = ({ beer }: cardProps): JSX.Element => {
   return (
-    <Wraper>
+    <Wraper onClick={()=>console.log("click"+beer.id)}>
+      <Link to={'/' + beer.id}>
       <Img
         src={`${beer.image_url}`}
         alt={beer.name}
@@ -22,7 +24,7 @@ const Card = ({ beer }: cardProps): JSX.Element => {
         <CardBeerProp abv={beer.abv} ibu={beer.ibu} />
         <SubTitleText modifiers={["card"]}>{beer.tagline}</SubTitleText><br/>
         <Text>{beer.description.length > 150 ? (beer.description.substring(0, 150) + "...") : beer.description}</Text>
-      </InfoBox>
+      </InfoBox></Link>
     </Wraper>
   );
 };
