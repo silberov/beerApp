@@ -29,7 +29,7 @@ const Malt = ({ malt, mashTemp }: PropsMalt): JSX.Element => {
         item.temp.unit
       )} for ${item.duration} minuts`
   );
-//const [pr, calc]
+  //const [pr, calc]
   return (
     <Wraper>
       <Text>{meshText}</Text>
@@ -37,6 +37,7 @@ const Malt = ({ malt, mashTemp }: PropsMalt): JSX.Element => {
       <ul style={{ padding: "0" }}>
         {malt.map((item) => (
           <Ingrediant
+            key={item.name}
             name={item.name}
             amount={item.amount.value}
             units={item.amount.unit}

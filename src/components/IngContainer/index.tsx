@@ -1,14 +1,16 @@
-import { useParams } from "react-router";
 import BeerNav from "../BeerNav";
 import Hops from "./Hops";
 import Malt from "./Malt";
 import Yeast from "./Yeast";
 import { Wraper } from "./styles";
-import { BrowserRouter as Router, Route, Routes, Outlet } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 
 export type PropsIngContainer = {
+
   activeTub: string;
   onActive: (tub: string) => void;
+
   method: {
     mash_temp: [
       {
@@ -56,27 +58,30 @@ const IngContainer = ({
   method,
   tip,
 }: PropsIngContainer): JSX.Element => {
-  const param = useParams();
-  console.log("ing cont", param);
+
+  const location = useLocation().pathname.split('/');
+  const tub = location[location.length-1]
+
+  console.log("ing location", tub);
 
   // const [percent, calculatePercentage] = useScale()
 
-  // console.log("cont", percent);
-
   return (
     <Wraper>
+
       <BeerNav active={activeTub} onChange={onActive} />
-      {activeTub === "malt" ? (
-        <Malt malt={ingredients.malt} mashTemp={method.mash_temp} />
-      ) : activeTub === "hops" ? (
+      {tub === "yeast" ? (
+        <Yeast
+        yeast={ingredients.yeast}
+        temperature={method.fermentation.temp}
+        tip={tip}
+        twist={method?.twist || null}
+      />
+        
+      ) : tub === "hops" ? (
         <Hops hops={ingredients.hops} />
       ) : (
-        <Yeast
-          yeast={ingredients.yeast}
-          temperature={method.fermentation.temp}
-          tip={tip}
-          twist={method?.twist || null}
-        />
+        <Malt malt={ingredients.malt} mashTemp={method.mash_temp} />
       )}
       {/* <Routes>
           <Route

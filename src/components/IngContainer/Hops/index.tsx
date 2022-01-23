@@ -17,7 +17,7 @@ export type hopsProps = {
 
     return (
       <Wraper>
-         {hops.map(item => <Ingrediant key={item.name} name={item.name} add={item.add} attribute={item.attribute} amount={item.amount.value} units={item.amount.unit}/>)}
+         {hops.map((item, index) => <Ingrediant key={index} name={item.name} add={item.add} attribute={item.attribute} amount={item.amount.value} units={item.amount.unit}/>)}
       </Wraper>
     );
   };
