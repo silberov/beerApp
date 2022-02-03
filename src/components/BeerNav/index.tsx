@@ -1,6 +1,6 @@
 import { Box, Ul, Li, Ilink } from "./styles";
-import { Outlet } from "react-router-dom";
-import { useParams } from "react-router";
+import { Outlet, useParams } from "react-router-dom";
+
 
 export type BeerNavProps = {
   active: string;
@@ -12,7 +12,6 @@ const BeerNav = ({ active, onChange }: BeerNavProps): JSX.Element => {
     onChange(newTub);
   };
   const param = useParams();
-  console.log("navbeer", param);
 
   return (
     <>

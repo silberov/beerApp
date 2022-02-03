@@ -16,7 +16,7 @@ const DOT_MODIFIER_CONFIG = {
   card: () => `
   min-height: 35px;
   min-width: 35px;
-  margin-left: 0;
+  margin: 0 10px 10px 45px;
     `,
 };
 
