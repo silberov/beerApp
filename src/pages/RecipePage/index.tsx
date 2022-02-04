@@ -30,6 +30,7 @@ const RecipePage = ({activeTub ,onActive}:RecipePageProps) => {
       .then((response) => {
         setBeer(response.data);
         setLoading(false);
+  
       })
       .catch((err) => {
         const error =
@@ -39,6 +40,7 @@ const RecipePage = ({activeTub ,onActive}:RecipePageProps) => {
         setError(error);
         setLoading(false);
       });
+
   }, [param.id]);
 console.log(beer);
 

@@ -8,6 +8,7 @@ import Food from "../Food";
 import IngContainer from "../IngContainer";
 import SubTitle from "../SubTitle";
 import { Wraper, InnerBox, OuterBox } from "./styles";
+import kegImg from "../../Assets/kegImg.png"
 
 export type RecipeProps = {
   beer: beerType;
@@ -17,14 +18,15 @@ export type RecipeProps = {
 
 
 const Recipe = ({ beer, activeTub, onActive }: RecipeProps): JSX.Element => {
-  console.log(beer);
+  console.log(beer.image_url === null || beer.image_url.includes('keg'));
+  const isKeg = beer.image_url && beer.image_url.includes('keg')
 
   return (
       <Wraper>
         {/* fix the beer img */}
         <img
-          style={{ width: " 166px", margin: "0 30px 0 0" }}
-          src={`${beer.image_url}`}
+          style={{ width: isKeg ? '274px' : '166px', margin: "0 30px 0 0" }}
+          src={ isKeg ? kegImg : `${beer.image_url}`}
           alt={beer.name}
         />
         <div>

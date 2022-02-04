@@ -3,6 +3,7 @@ import { SubTitleText, Text } from "../../code-ui/typograpgy";
 import { beerType } from "../../interfaces/beer-interface";
 import ColorTitle from "../ColorTitle";
 import CardBeerProp from "./CardBeerProp";
+import kegImg from "../../Assets/kegImg.png"
 import {
   DescribtionBox,
   Img,
@@ -18,9 +19,11 @@ export type cardProps = {
 
 const Card = ({ beer }: cardProps): JSX.Element => {
   const navigate = useNavigate();
+  const isKeg = beer.image_url && beer.image_url.includes('keg')
+  
   return (
     <Wraper onClick={() => navigate(`/${beer.id}`)}>
-      <Img src={`${beer.image_url}`} alt={beer.name} />
+      <Img src={isKeg ? kegImg : `${beer.image_url}`} alt={beer.name} style={{width: isKeg ? '114px' : '100px'}} />
       <InfoBox>
         <ColorTitle ebc={beer.ebc} title={beer.name} card={true} />
         <LineBox>
