@@ -18,7 +18,7 @@ const TEXT_MODIFIER_CONFIG = {
 const SUBTITLE_MODIFIER_CONFIG = {
   card: () => `
       font-size: 1rem;
-      margin-left: 30px;
+      margin-left: 50px;
     `,
 };
 

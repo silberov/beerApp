@@ -31,7 +31,7 @@ const Card = ({ beer }: cardProps): JSX.Element => {
           <DescribtionBox>
             <Text>
               {beer.description.length > 150
-                ? beer.description.substring(0, 150) + "..."
+                ? beer.description.substring(0, 190) + "..."
                 : beer.description}
             </Text>
           </DescribtionBox>
