@@ -1,5 +1,5 @@
 import { Box, Ul, Li, Ilink } from "./styles";
-import { Outlet, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 export type BeerNavProps = {
@@ -36,7 +36,6 @@ const BeerNav = ({ active, onChange }: BeerNavProps): JSX.Element => {
           </Li>
         </Ul>
       </nav>
-      <Outlet />
     </>
   );
 };

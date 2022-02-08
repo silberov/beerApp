@@ -10,6 +10,8 @@ type props = {
 export const Wraper = styled.div`
   display: flex;
   align-items: center;
+  padding: 20px 0;
+  background-color: ${colors.white};
 `;
 
 const DOT_MODIFIER_CONFIG = {

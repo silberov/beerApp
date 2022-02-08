@@ -1,4 +1,3 @@
-import BeerNav from "../BeerNav";
 import Hops from "./Hops";
 import Malt from "./Malt";
 import Yeast from "./Yeast";
@@ -69,7 +68,6 @@ const IngContainer = ({
   return (
     <Wraper>
 
-      <BeerNav active={activeTub} onChange={onActive} />
       {tub === "yeast" ? (
         <Yeast
         yeast={ingredients.yeast}
