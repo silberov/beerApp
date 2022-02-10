@@ -7,6 +7,7 @@ beers: beerType[]
 };
 
 const CardConatiner = ({beers}:CardConatinerProps): JSX.Element => {
+
   return (
     <Wraper>
       {beers.map(beer => <Card beer={beer} />)}

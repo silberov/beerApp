@@ -5,7 +5,15 @@ import Description from "../Description";
 import Food from "../Food";
 import IngContainer from "../IngContainer";
 import SubTitle from "../SubTitle";
-import { Wraper, LeftGrid, RightGrid, Grid, Box, Img } from "./styles";
+import {
+  Wraper,
+  LeftSection,
+  RightSection,
+  Grid,
+  Box,
+  Img,
+  Numeric,
+} from "./styles";
 import kegImg from "../../Assets/kegImg.png";
 import NumberFormat from "react-number-format";
 import BeerNav from "../BeerNav";
@@ -19,30 +27,36 @@ export type RecipeProps = {
 const Recipe = ({ beer, activeTub, onActive }: RecipeProps): JSX.Element => {
   console.log(beer);
   const isKeg = beer.image_url.includes("keg");
-
+console.log("isKeg", isKeg)
   return (
     <Wraper>
       <Img
-       isKeg={isKeg}
+        isKeg={isKeg}
         src={isKeg ? kegImg : `${beer.image_url}`}
         alt={beer.name}
       />
 
       <Grid>
         <ColorTitle ebc={beer.ebc} title={beer.name} />
-        <LeftGrid>
+        <LeftSection>
           <SubTitle isDark={true} text={beer.tagline} />
-          <Box>IBU : {beer.ibu}</Box>
-          <Box>
-            ABV :{" "}
-            <NumberFormat value={beer.abv} displayType={"text"} suffix={"%"} />
-          </Box>
-          <Box>OG : {beer.target_og}</Box>
-          <Box>FG : {beer.target_fg}</Box>
+          <Numeric>
+            <Box>IBU : {beer.ibu}</Box>
+            <Box>
+              ABV :{" "}
+              <NumberFormat
+                value={beer.abv}
+                displayType={"text"}
+                suffix={"%"}
+              />
+            </Box>
+            <Box>OG : {beer.target_og}</Box>
+            <Box>FG : {beer.target_fg}</Box>
+          </Numeric>
           <Description text={beer.description} />
           <Food food={beer.food_pairing} />
-        </LeftGrid>
-        <RightGrid>
+        </LeftSection>
+        <RightSection>
           <SubTitle
             isDark={false}
             text={"ingredients for"}
@@ -57,7 +71,7 @@ const Recipe = ({ beer, activeTub, onActive }: RecipeProps): JSX.Element => {
             method={beer.method}
             tip={beer.brewers_tips}
           />
-        </RightGrid>
+        </RightSection>
       </Grid>
     </Wraper>
   );

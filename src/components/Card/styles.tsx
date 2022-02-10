@@ -4,12 +4,11 @@ import { colors } from "../../Assets/colors";
 export const Wraper = styled.div`
   display: flex;
   align-items: flex-end;
-  //background-color: #a5a5a5;
-  width: 530px;
-  margin: 40px 10px;
+  max-width: 500px;
+  margin-bottom: 40px;
   cursor: pointer;
-  position: relative;
-  @media (max-width: 700px) {
+
+  @media (max-width: 768px) {
     position: relative;
     overflow: hidden;
   }
@@ -27,20 +26,21 @@ export const Lable = styled.span`
 export const Img = styled.img`
   width: 100px;
   z-index: +1;
-  @media (max-width: 700px) {
-    position: absolute;
+  @media (max-width: 768px) {
+    position: relative;
     left: -50px;
   }
 `;
 
 export const InfoBox = styled.div`
-
-  position: absolute;
-  left: 70px;
-  @media (max-width: 700px) {
-    left: -70px;
-
+position: relative;
+  left: -40px;
+  margin-right: 10px;
+  @media (max-width: 768px) {
+    position: absolute;
+    left: 20px;
   }
+
 `;
 
 export const LineBox = styled.div`

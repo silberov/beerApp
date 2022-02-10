@@ -37,7 +37,8 @@ const SearchPage = () => {
     <h1>loading</h1>
   ) : error ? (
     <h1>{error}</h1>
-  ) : (<CardConatiner beers={beers}/>
+  ) : (
+  <CardConatiner beers={beers}/>
   );
 };
 

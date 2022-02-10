@@ -10,7 +10,7 @@ type props = {
 export const Wraper = styled.div`
   display: flex;
   align-items: center;
-  padding: 20px 0;
+  padding: 10px 0;
   background-color: ${colors.white};
 `;
 

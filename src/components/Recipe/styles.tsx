@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { colors } from "../../Assets/colors";
 
 type props = {
-    isKeg: boolean
-}
+  isKeg: boolean;
+};
 
 export const Wraper = styled.div`
   display: flex;
@@ -17,30 +17,43 @@ export const Wraper = styled.div`
 `;
 
 export const Img = styled.img<props>`
-    width: ${isKeg => isKeg ? "274px" : "166px"};
-    margin: 0 30px 0 0;
-    @media (max-width: 768px) {
-        width: ${isKeg => isKeg ? "137px" : "83px"};
-        position: absolute;
-        left: -83px;
-        top: 45px
-    }
-`
+  margin: 0 30px 0 0;
+  width: ${(props) => (props.isKeg ? "274px" : "166px")};
+  @media (max-width: 768px) {
+    width: ${(isKeg) => (isKeg ? "137px" : "83px")};
+    position: absolute;
+
+    left: -20%;
+    top: 147px;
+  }
+`;
 
 export const Box = styled.div`
-  width: 100%;
+  width: calc(25% - 3px);
+  text-align: center;
   font-family: Teko;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 34px;
   display: inline;
-  margin: auto;
   padding: 20px 0;
-  display: flex;
   justify-content: center;
+  border-right: 3px solid ${colors.dark};
+  border-bottom: 3px solid ${colors.dark};
+  :nth-child(4) {
+    border-right: none;
+    width: 25%;
+  }
+  @media (max-width: 768px) {
+    width: calc(50% - 3px);
+    border-bottom: 3px solid ${colors.dark};
+    :nth-child(4) {
+      width: calc(50% - 3px);
+      border-right: 3px solid ${colors.dark};
+    }
+  }
 `;
-
 
 export const Grid = styled.div`
   display: grid;
@@ -50,35 +63,29 @@ export const Grid = styled.div`
     grid-column: 1 / 3;
   }
   @media (max-width: 768px) {
-      display: block;
+    display: block;
   }
 `;
 
-
-export const LeftGrid = styled.div`
-  display: grid;
+export const LeftSection = styled.div`
   outline: 3px solid ${colors.dark};
   grid-gap: 3px;
   grid-template-columns: repeat(4, 1fr);
-  > * {
-    outline: 3px solid ${colors.dark};
-  }
 
-  > :nth-child(1) {
-    grid-column: 1 / 5;
-  }
-  > :nth-child(6) {
-    grid-column: 1 / 5;
-  }
-  > :nth-child(7) {
-    grid-column: 1 / 5;
-  }
-  > :nth-child(8) {
-    grid-column: 1 / 5;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
   }
 `;
+export const Numeric = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
-
-export const RightGrid = styled.div`
+export const RightSection = styled.div`
   outline: 3px solid ${colors.dark};
+  @media (max-width: 768px) {
+    outline: none;
+    border-left: 3px solid ${colors.dark};
+    border-right: 3px solid ${colors.dark};
+  }
 `;
