@@ -4,15 +4,13 @@ import Ingrediant from "../../Ingredient";
 import { Wraper } from "./styles";
 
 export type PropsMalt = {
-  mashTemp: [
-    {
-      temp: {
+  mashTemp: [{
+    temp: {
         value: number;
         unit: string;
-      };
-      duration: number;
-    }
-  ];
+    };
+    duration: number | null;
+}]
   malt: {
     name: string;
     amount: {

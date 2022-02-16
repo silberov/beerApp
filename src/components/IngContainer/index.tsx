@@ -17,7 +17,7 @@ export type PropsIngContainer = {
           value: number;
           unit: string;
         };
-        duration: number;
+        duration: number | null;
       }
     ];
     fermentation: {
@@ -26,7 +26,7 @@ export type PropsIngContainer = {
         unit: string;
       };
     };
-    twist?: string | null;
+    twist: string | null;
   };
   ingredients: {
     malt: {

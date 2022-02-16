@@ -10,7 +10,7 @@ const CardConatiner = ({beers}:CardConatinerProps): JSX.Element => {
 
   return (
     <Wraper>
-      {beers.map(beer => <Card beer={beer} />)}
+      {beers.map(beer => <Card key={beer.id} beer={beer} />)}
     </Wraper>
   );
 };

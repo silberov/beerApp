@@ -25,6 +25,7 @@ export type RecipeProps = {
 };
 
 const Recipe = ({ beer, activeTub, onActive }: RecipeProps): JSX.Element => {
+
   console.log(beer);
   const isKeg = beer.image_url.includes("keg");
 console.log("isKeg", isKeg)

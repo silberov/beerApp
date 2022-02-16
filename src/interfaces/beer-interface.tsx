@@ -28,7 +28,7 @@ export interface beerType {
             value: number;
             unit: string;
           };
-          duration: number;
+          duration: number | null;
         }
       ];
       fermentation: {
