@@ -2,7 +2,8 @@ import CardConatiner from "../../components/CardContainer";
 import { useAPI } from "../../context";
 
 const SearchPage = () => {
-  const {beers, loading, error} = useAPI();
+  const {beers, loading, error, setSelectedId} = useAPI();
+  setSelectedId('')
   console.log("beers", beers);
 
   return loading ? (
